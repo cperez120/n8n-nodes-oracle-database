@@ -13,8 +13,8 @@ import { OracleConnection } from "./core/connection";
 
 export class OracleDatabase implements INodeType {
   description: INodeTypeDescription = {
-    displayName: "Oracle Database",
-    name: "Oracle Database",
+    displayName: "Oracle Database Custom",
+    name: "Oracle Database Custom",
     icon: "file:oracle.svg",
     group: ["input"],
     version: 1,
@@ -84,6 +84,6 @@ export class OracleDatabase implements INodeType {
       }
     }
 
-    return this.prepareOutputData(returnItems);
+    return this.prepareOutputData(returnItems.[0].rows);
   }
 }
