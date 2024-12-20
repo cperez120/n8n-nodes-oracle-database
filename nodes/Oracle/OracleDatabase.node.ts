@@ -67,6 +67,7 @@ export class OracleDatabase implements INodeType {
       const result = await connection.execute(query, [], {
         outFormat: oracledb.OUT_FORMAT_OBJECT,
       });
+      const resultOutput = result.rows
       returnItems = this.helpers.returnJsonArray(
         result as unknown as IDataObject[]
       );
@@ -84,6 +85,6 @@ export class OracleDatabase implements INodeType {
       }
     }
 
-    return this.prepareOutputData(returnItems.[0].rows);
+    return this.prepareOutputData(returnItems);
   }
 }
