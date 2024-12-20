@@ -36,7 +36,7 @@ export class Oracle implements ICredentialType {
       displayName: "Use Thin mode",
       name: "thinMode",
       type: "boolean",
-      default: true,
+      default: false,
       description: "Define type of connection with database",
     },
   ];
